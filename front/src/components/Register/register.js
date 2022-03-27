@@ -21,16 +21,21 @@ export default {
   methods: {
     //user register function and api call
     create_user() {
-    //   let self = this;
+      let self = this;
 
       axios
-        .post("/api/auth/register", this.form)
+        .post(self.$apiUrl + "/api/auth/register", this.form)
         .then((response) => {
           //reset form after submission
-          this.form.name = "";
+          this.form.firstname = "";
+          this.form.lastname = "";
           this.form.email = "";
           this.form.password = "";
           this.form.password_confirmation = "";
+          this.form.gender = "";
+          this.form.adresa = "";
+          this.form.birthday = "";
+
           //success message alert
           Swal.fire({
             title: "Success!",
@@ -41,9 +46,14 @@ export default {
         })
         .catch((e) => {
           let text =
-            e.response.data.errors.name ||
+            e.response.data.errors.firstname ||
+            e.response.data.errors.lastname ||
             e.response.data.errors.email ||
-            e.response.data.errors.password;
+            e.response.data.errors.password ||
+            e.response.data.errors.gender ||
+            e.response.data.errors.adresa ||
+            e.response.data.errors.birthday;
+            
           console.log(e.response);
           Swal.fire({ title: "Error", text: text, icon: "warning" });
         });

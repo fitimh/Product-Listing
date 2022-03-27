@@ -15,7 +15,7 @@
           aria-labelledby="home-tab"
         >
           <h3 class="register-heading">Create a register</h3>
-          <form class="form__register">
+          <form class="form__register" v-on:submit.prevent="create_user">
             <div class="row register-form">
               <div class="col col-md-6">
                 <div class="d-flex full__name">
@@ -24,7 +24,7 @@
                       type="text"
                       class="form-control"
                       placeholder="First Name *"
-                      value=""
+                      v-model="form.firstname"
                     />
                   </div>
                   <div class="form-group">
@@ -32,7 +32,7 @@
                       type="text"
                       class="form-control"
                       placeholder="Last Name *"
-                      value=""
+                      v-model="form.lastname"
                     />
                   </div>
                 </div>
@@ -42,7 +42,7 @@
                       type="password"
                       class="form-control"
                       placeholder="Password *"
-                      value=""
+                      v-model="form.password"
                     />
                   </div>
                   <div class="form-group">
@@ -50,7 +50,7 @@
                       type="password"
                       class="form-control"
                       placeholder="Confirm Password *"
-                      value=""
+                      v-model="form.password_confirmation"
                     />
                   </div>
                 </div>
@@ -61,20 +61,14 @@
                     type="email"
                     class="form-control"
                     placeholder="Your Email *"
-                    value=""
+                    v-model="form.email"
                   />
                 </div>
                 <div class="d-flex">
                   <div class="form-group">
-                    <input
-                      type="text"
-                      minlength="10"
-                      maxlength="10"
-                      name="txtEmpPhone"
-                      class="form-control"
-                      placeholder="Your Phone *"
-                      value=""
-                    />
+                    <input type="text" minlength="6" maxlength="15"
+                    name="txtEmpPhone" class="form-control" placeholder="Your
+                    Phone" v-model="form.phone" />
                   </div>
                   <div class="form-group">
                     <input
@@ -82,7 +76,7 @@
                       name="adresa"
                       class="form-control"
                       placeholder="Your adresa *"
-                      value=""
+                      v-model="form.adresa"
                     />
                   </div>
                 </div>
@@ -94,6 +88,7 @@
                     onfocus="(this.type='date')"
                     onblur="(this.type='text')"
                     id="date"
+                    v-model="form.birthday"
                     required
                   />
                 </div>
@@ -102,11 +97,22 @@
                 <div class="form-group">
                   <div class="maxl">
                     <label class="radio inline">
-                      <input type="radio" name="gender" value="male" checked />
+                      <input
+                        type="radio"
+                        name="gender"
+                        value="male"
+                        checked
+                        v-model="form.gender"
+                      />
                       <span> Male </span>
                     </label>
                     <label class="radio inline">
-                      <input type="radio" name="gender" value="female" />
+                      <input
+                        type="radio"
+                        name="gender"
+                        value="female"
+                        v-model="form.gender"
+                      />
                       <span>Female </span>
                     </label>
                   </div>
