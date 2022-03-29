@@ -4,12 +4,12 @@
       <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
       <h3>Welcome login</h3>
       <p>Doesn't exist accout, please click button register</p>
-      <router-link to="/register">   <input type="submit" name="" value="Register" /><br /></router-link> 
+      <input type="submit" name="" value="Register" /><br />
     </div>
     <div class="col-md-9 register-right">
       <div class="tab-content" id="myTabContent">
         <h3 class="register-heading">Login</h3>
-        <form class="form__register" v-on:submit.prevent="login_user">
+        <form class="form__register" >
           <div class="row register-form">
             <div class="col col-md-6">
               <div class="form-group">
@@ -18,7 +18,7 @@
                   type="email"
                   class="form-control"
                   placeholder="Your Email *"
-                  v-model="form.email"
+                
                 />
               </div>
               <div class="form-group">
@@ -26,7 +26,6 @@
                   type="password"
                   class="form-control"
                   placeholder="Password *"
-                  v-model="form.password"
                 />
               </div>
             </div>
