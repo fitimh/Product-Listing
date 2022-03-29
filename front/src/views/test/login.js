@@ -1,14 +1,11 @@
-import axios from "axios";
-import Swal from "sweetalert2";
-
 export default {
   data() {
+    let form = {
+      email: "",
+      password: ""
+    }
     return {
-      form: {
-
-        email: "",
-        password: "",
-      }
+     form,
     };
   },
 
@@ -17,15 +14,13 @@ export default {
     login_user() {
       let self = this;
 
-      const newLocal = "/api/auth/login";
-
-      
       axios
-        .post(self.$apiUrl + newLocal, this.form)
+        .post(self.$apiUrl + "/api/auth/login", this.form)
         .then((response) => {
           //reset form after submission
-          self.form.email = "";
-          self.form.password = "";
+
+          this.form.email = "";
+          this.form.password = "";
 
           //success message alert
           Swal.fire({
@@ -33,9 +28,7 @@ export default {
             text: "Login has been successfully",
             icon: "success",
           });
-       
           return response;
-        
         })
         .catch((e) => {
           let text =
