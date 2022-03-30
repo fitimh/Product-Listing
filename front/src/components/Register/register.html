@@ -1,0 +1,129 @@
+<div class="container register">
+  <div class="row">
+    <div class="col-md-3 register-left">
+      <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+      <h3>Welcome</h3>
+      <p>If you are registered then click the button to login!</p>
+      <router-link to="/login"><input type="submit" name="" value="Login" /><br /></router-link>
+    </div>
+    <div class="col-md-9 register-right">
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="home"
+          role="tabpanel"
+          aria-labelledby="home-tab"
+        >
+          <h3 class="register-heading">Create a register</h3>
+          <form class="form__register" v-on:submit.prevent="create_user">
+            <div class="row register-form">
+              <div class="col col-md-6">
+                <div class="d-flex full__name">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="First Name *"
+                      v-model="form.firstname"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Last Name *"
+                      v-model="form.lastname"
+                    />
+                  </div>
+                </div>
+                <div class="d-flex group__password">
+                  <div class="form-group">
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Password *"
+                      v-model="form.password"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Confirm Password *"
+                      v-model="form.password_confirmation"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <input
+                    id="email__form"
+                    type="email"
+                    class="form-control"
+                    placeholder="Your Email *"
+                    v-model="form.email"
+                  />
+                </div>
+                <div class="d-flex">
+                  <div class="form-group">
+                    <input type="text" minlength="6" maxlength="15"
+                    name="txtEmpPhone" class="form-control" placeholder="Your
+                    Phone" v-model="form.phone" />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      name="adresa"
+                      class="form-control"
+                      placeholder="Your adresa *"
+                      v-model="form.adresa"
+                    />
+                  </div>
+                </div>
+                <div class="form-group d-flex">
+                  <input
+                    class="form-control"
+                    placeholder="Enter your birthday"
+                    type="text"
+                    onfocus="(this.type='date')"
+                    onblur="(this.type='text')"
+                    id="date"
+                    v-model="form.birthday"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="choose__gender">
+                <div class="form-group">
+                  <div class="maxl">
+                    <label class="radio inline">
+                      <input
+                        type="radio"
+                        name="gender"
+                        value="male"
+                        checked
+                        v-model="form.gender"
+                      />
+                      <span> Male </span>
+                    </label>
+                    <label class="radio inline">
+                      <input
+                        type="radio"
+                        name="gender"
+                        value="female"
+                        v-model="form.gender"
+                      />
+                      <span>Female </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <input type="submit" class="btnRegister" value="Register" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
