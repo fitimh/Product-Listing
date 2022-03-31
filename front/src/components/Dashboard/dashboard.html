@@ -1,0 +1,53 @@
+<div id="allTheNav">
+  <nav id="navigator" class="navbar__menu" :class="{navbaropen: opened}">
+    <span class="open-slide">
+      <a href="#" @click="opened = !opened">
+        <div>
+          <div class="bar" :class="{topopen: opened}"></div>
+          <div class="bar" :class="{midopen: opened}"></div>
+          <div class="bar" :class="{botopen: opened}"></div>
+        </div>
+      </a>
+    </span>
+    <ul class="navbar__profile">
+      <li><a href="#">Product</a></li>
+      <li><a href="#">MyProfile</a></li>
+    </ul>
+  </nav>
+  <div id="side-menu" class="side-nav" :class="{sidenavopen: opened}">
+    <li><a href="#">Product</a></li>
+    <li><a href="#">MyProfile</a></li>
+  </div>
+  <div id="main" :class="{mainopen: opened}">
+    <div>
+      <h2 class="text-center">Products List</h2>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Desc</th>
+            <!-- <th>Actions</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="product in products" :key="product.id">
+            <td>{{ product.id }}</td>
+          
+            <!-- <td>{{ product.img }}</td> -->
+            <td>{{ product.title }}</td>
+            <td>{{ product.desc }}</td>
+            <td>
+              <div class="btn-group" role="group">
+                <!-- <router-link :to="{name: 'edit', params: { id: product.id }}" class="btn btn-success">Edit</router-link> -->
+                      <!-- <button class="btn btn-danger" @click="deleteProduct(product.id)">Delete</button> -->
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

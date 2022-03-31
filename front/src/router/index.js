@@ -3,6 +3,8 @@ import Home from "../views/Home.vue";
 import About from "@/views/About.vue";
 import Register from "@/views/Register";
 import Login from "@/views/Login";
+import Dashboard from "@/views/Dashboard"
+
 
 const routes = [
   {
@@ -24,8 +26,12 @@ const routes = [
     path: "/login",
     name: "login",
     component: Login,
+  },
+  {
+    path: "/dashboard",
+    name: "dashboard",
+    component: Dashboard,
   }
-
 ];
 
 const router = createRouter({
@@ -34,3 +40,4 @@ const router = createRouter({
 });
 
 export default router;
+

@@ -51,7 +51,13 @@ Route::prefix('auth')->group(function(){
 
 
     Route::group(['middleware' => 'auth:api'], function(){
-            Route::get('user', 'AuthController@user');
+        Route::get('user', 'AuthController@user');
         Route::post('logout', 'AuthController@logout');
     });
+});
+
+// Products
+
+Route::middleware('api')->group(function () {
+    Route::get('products', 'ProductController@index');
 });

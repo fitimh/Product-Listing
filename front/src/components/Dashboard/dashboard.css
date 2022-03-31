@@ -1,0 +1,173 @@
+.navbar__menu {
+  background-color: #3b5998;
+  overflow: hidden;
+  height: 63px;
+}
+
+.navbaropen {
+  background-color: #3b5998 !important;
+  overflow: hidden;
+  height: 63px;
+  margin-left: 250px;
+}
+
+.navbar__menu a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar__menu ul {
+  margin: 8px 0 0 0;
+  list-style: none;
+}
+
+.navbar__menu a:hover {
+  background-color: #ddd;
+  color: #000;
+}
+
+.side-nav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  opacity: 0.9;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.3s;
+}
+
+.sidenavopen {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  opacity: 0.9;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.3s;
+}
+
+.side-nav a {
+  padding: 10px 10px 10px 30px;
+  text-decoration: none;
+  font-size: 22px;
+  color: #ccc;
+  display: block;
+  transition: 0.3s;
+}
+
+.side-nav a:hover {
+  color: #fff;
+}
+
+.side-nav .btn-close {
+  position: absolute;
+  top: 0;
+  right: 22px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left 0.3s;
+  padding: 20px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.mainopen {
+  transition: margin-left 0.3s;
+  padding: 20px;
+  overflow: hidden;
+  width: 100%;
+  margin-left: 250px;
+}
+
+nav {
+  transition: margin-left 0.3s;
+}
+
+.bar {
+  display: block;
+  height: 5px;
+  width: 35px;
+  background: #000;
+  margin: 5px auto;
+}
+
+.midopen {
+  width: 0;
+}
+.bar {
+  transition: all 0.3s ease;
+}
+.topopen {
+  transform: translateY(10px) rotateZ(45deg);
+}
+.botopen {
+  transform: translateY(-10px) rotateZ(-45deg);
+}
+
+/* Table list product */
+.users-style {
+  width: 70%;
+  margin: auto;
+  margin-top: 20px;
+}
+.users-style .table-style {
+  margin-bottom: 10px;
+}
+.users-style .table-style input {
+  width: 175px;
+}
+.users-style .table-style .control {
+  float: right;
+}
+.users-style .table {
+  width: 100%;
+}
+.users-style .table .sorting {
+  background-image: url("/images/sort_both.png");
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+.users-style .table .sorting_asc {
+  background-image: url("/images/sort_asc.png");
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+.users-style .table .sorting_desc {
+  background-image: url("/images/sort_desc.png");
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+.users-style nav a {
+  color: white !important;
+  margin-right: 10px;
+}
+h1 {
+  text-align: center;
+  font-size: 30px;
+}
+.pagination {
+  justify-content: flex-end !important;
+}
+.pagination .page-stats {
+  align-items: center;
+  margin-right: 5px;
+}
+.pagination i {
+  color: #3273dc !important;
+}
