@@ -3,7 +3,8 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link to="/register">Register</router-link> | 
-    <router-link to="/login">Login</router-link>
+    <router-link to="/login">Login</router-link> | 
+    <router-link to="/dashboard">Dashboard</router-link>
 
   </div>
   <router-view />
@@ -20,11 +21,13 @@
 
 #nav {
   padding: 30px;
+    background:rgb(255, 189, 135);
 }
 
 #nav a {
   font-weight: bold;
   color: #2c3e50;
+
 }
 
 #nav a.router-link-exact-active {
