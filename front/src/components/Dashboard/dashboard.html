@@ -11,17 +11,52 @@
     </span>
     <ul class="navbar__profile">
       <li><a href="#">Product</a></li>
-      <li><a href="#">MyProfile</a></li>
+      <router-link to="/profile"><li><a href="#">MyProfile</a></li></router-link>
+      <!-- <li><a href="#">MyProfile</a></li> -->
     </ul>
   </nav>
   <div id="side-menu" class="side-nav" :class="{sidenavopen: opened}">
     <li><a href="#">Product</a></li>
-    <li><a href="#">MyProfile</a></li>
+   <!-- <router-link to="/Dashboard/profile"><li><a href="#">MyProfile</a></li></router-link> -->
   </div>
   <div id="main" :class="{mainopen: opened}">
-    <div>
-      <h2 class="text-center">Products List</h2>
+    <section>
 
+      <div>
+        <div class="fetch-profile">
+          <button @click="fetchProducts" class="btn-users">Fetch Product</button>
+          <h4 v-if="loading">Loading...</h4>
+        </div>
+        <div class="table__center justify-content-center d-flex ">
+          <table class="user-table">
+            <thead class="thead-bg">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Image</th>
+                <th scope="col">Descpriton</th>
+                <!-- <th scope="col">Views</th> -->
+              </tr>
+            </thead>
+            <tbody v-for="(product, index) in products" :key="index">
+              <tr>
+                <th scope="row">{{ product.id }}</th>
+                <td>{{ product.title }}</td>
+                <td>{{ product.product_img }}</td>
+                <td>{{ product.desc }}</td>
+                <!-- <td>{{ product.views }}</td> -->
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!-- testng products -->
+    <!-- <div>
+      <h2 class="text-center">Products List</h2>
+      <label>{{products}}</label>
+
+      <p>{{products.id}}</p>
       <table class="table">
         <thead>
           <tr>
@@ -29,25 +64,26 @@
             <th>Image</th>
             <th>Title</th>
             <th>Desc</th>
-            <!-- <th>Actions</th> -->
+          
           </tr>
         </thead>
         <tbody>
+        
           <tr v-for="product in products" :key="product.id">
             <td>{{ product.id }}</td>
-          
-            <!-- <td>{{ product.img }}</td> -->
+            <td>{{ product.product_img }}</td>
             <td>{{ product.title }}</td>
             <td>{{ product.desc }}</td>
+            <td>{{ product.views }}</td>
             <td>
               <div class="btn-group" role="group">
-                <!-- <router-link :to="{name: 'edit', params: { id: product.id }}" class="btn btn-success">Edit</router-link> -->
-                      <!-- <button class="btn btn-danger" @click="deleteProduct(product.id)">Delete</button> -->
+              <router-link :to="{name: 'edit', params: { id: product.id }}" class="btn btn-success">Edit</router-link> 
+                      <button class="btn btn-danger" @click="deleteProduct(product.id)">Delete</button> 
               </div>
             </td>
           </tr>
         </tbody>
       </table>
-    </div>
+    </div> -->
   </div>
 </div>
