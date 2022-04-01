@@ -121,7 +121,7 @@ nav {
 }
 
 /* Table list product */
-.users-style {
+/* .users-style {
   width: 70%;
   margin: auto;
   margin-top: 20px;
@@ -170,4 +170,47 @@ h1 {
 }
 .pagination i {
   color: #3273dc !important;
+}
+ */
+
+.fetch-profile {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  padding: 30px;
+}
+.thead-bg {
+  background-color: rgb(221, 220, 220);
+}
+.btn-users {
+  background-color: #000;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.user-table {
+  border-collapse: collapse;
+  width: 60%;
+}
+.user-table td,
+.user-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.user-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.user-table tr:hover {
+  background-color: #ddd;
+}
+.user-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgb(221, 220, 220);
+  color: rgb(49, 49, 49);
 }

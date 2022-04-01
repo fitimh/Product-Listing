@@ -105,4 +105,15 @@ class AuthController extends Controller
         return Auth::guard();
     }
 
+
+    // public function update($id, Request $request)
+    // {
+    
+    //     $user = User::find($id);
+    //     $user->update(
+    //         $request->'firstname'->'required';
+    //         $request->'email'->'required');
+    //     return response()->json('User updated!');
+       
+    // }
 }

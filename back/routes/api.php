@@ -1,8 +1,10 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,11 +24,11 @@ use App\Http\Controllers\PostController;
 Route::get('/user', function (Request $request) {
     return $request->user();
 });
-Route::group(['middleware' => 'auth:sanctum'], function(){
-    // Users
-    Route::get('users', 'UserController@index')->middleware('isAdmin');
-    Route::get('users/{id}', 'UserController@show')->middleware('isAdminOrSelf');
-});
+// Route::group(['middleware' => 'auth:sanctum'], function(){
+//     // Users
+//     Route::get('users', 'UserController@index')->middleware('isAdmin');
+//     Route::get('users/{id}', 'UserController@show')->middleware('isAdminOrSelf');
+// });
 
 //post
 //add group for posts
@@ -53,11 +55,26 @@ Route::prefix('auth')->group(function(){
     Route::group(['middleware' => 'auth:api'], function(){
         Route::get('user', 'AuthController@user');
         Route::post('logout', 'AuthController@logout');
+
+        // Route::post('profile/{$id}', 'AuthController@update');
+
+
     });
+    
+
 });
 
 // Products
 
 Route::middleware('api')->group(function () {
     Route::get('products', 'ProductController@index');
+});
+
+
+
+
+Route::post('profile', function($id,Request $request){
+    $user = User::find($id);
+    $user->update($request->all());
+    return response()->json('User updated!', 200);
 });
