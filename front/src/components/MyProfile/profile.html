@@ -1,0 +1,63 @@
+<!-- v-if="edituser" -->
+<div class="container">
+  <h2 class="register-heading">Edit User</h2>
+  <!-- v-on:submit.prevent="update(upd_user.id)" -->
+  <form class="form__register">
+    <div class="row register-form">
+      <div class="col col-md-6">
+        <div class="d-flex full__name">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="First Name *"
+            />
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Last Name *" />
+          </div>
+        </div>
+        <div class="d-flex group__password">
+          <div class="form-group">
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Password *"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Confirm Password *"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input
+            id="email__form"
+            type="email"
+            class="form-control"
+            placeholder="Your Email *"
+          />
+        </div>
+
+        <div class="form-group">
+          <input
+            type="text"
+            name="adresa"
+            class="form-control"
+            placeholder="Your adresa *"
+          />
+        </div>
+      </div>
+      <input type="submit" class="btnRegister" value="Update" />
+    </div>
+  </form>
+</div>
+
+<!-- v-model="upd_user.name" -->
+
+<!-- v-model="upd_user.email" -->
+<!-- <input type="hidden" name="id" v-model="upd_user.id" /> -->

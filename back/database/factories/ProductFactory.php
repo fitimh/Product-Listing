@@ -21,7 +21,7 @@ class ProductFactory extends Factory
 
             'title' => $this->faker->sentence(3, true),
             // 'product_img'=> $this->faker->default("hello"),
-            'desc' => $this->faker->realText($this->faker->numberBetween(10, 100)),
+            'desc' => $this->faker->realText($this->faker->numberBetween(10, 20)),
 
         ];
     }
