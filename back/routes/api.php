@@ -56,7 +56,7 @@ Route::prefix('auth')->group(function(){
         Route::get('user', 'AuthController@user');
         Route::post('logout', 'AuthController@logout');
 
-        // Route::post('profile/{$id}', 'AuthController@update');
+        Route::put('profile/{$id}', 'AuthController@update');
 
 
     });
@@ -68,13 +68,4 @@ Route::prefix('auth')->group(function(){
 
 Route::middleware('api')->group(function () {
     Route::get('products', 'ProductController@index');
-});
-
-
-
-
-Route::post('profile', function($id,Request $request){
-    $user = User::find($id);
-    $user->update($request->all());
-    return response()->json('User updated!', 200);
 });
